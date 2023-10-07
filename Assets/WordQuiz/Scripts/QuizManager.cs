@@ -40,6 +40,11 @@ public class QuizManager : MonoBehaviour
         SetQuestion();                                  //set question
     }
 
+    public void GiveClue()
+    {
+
+    }
+
     void SetQuestion()
     {
         gameStatus = GameStatus.Playing;                //set GameStatus to playing 
@@ -159,8 +164,11 @@ public class QuizManager : MonoBehaviour
             int index = selectedWordsIndex[selectedWordsIndex.Count - 1];
             optionsWordList[index].gameObject.SetActive(true);
             selectedWordsIndex.RemoveAt(selectedWordsIndex.Count - 1);
-
-            currentAnswerIndex--;
+            if(currentAnswerIndex > 0)
+            {
+                currentAnswerIndex--;
+            }
+            
             answerWordList[currentAnswerIndex].SetWord('_');
         }
     }

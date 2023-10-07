@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelChange : MonoBehaviour
 {
-    void Update()
+    string hedefSahneAdi;
+  
+    public void ChangeScene()
     {
-        
+        hedefSahneAdi = "Level1";
+        // Belirtilen sahneye geçiþ yap
+        SceneManager.LoadScene(hedefSahneAdi);
     }
 }
